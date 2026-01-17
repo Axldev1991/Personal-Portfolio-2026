@@ -15,7 +15,7 @@ const skills = [
 
 export default function About() {
     return (
-        <section id="about" className="py-24 bg-gray-50">
+        <section id="about" className="py-24 bg-surface">
             <div className="max-w-4xl px-6 mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -24,10 +24,10 @@ export default function About() {
                     transition={{ duration: 0.6 }}
                     className="space-y-6 text-center"
                 >
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                         About Me
                     </h2>
-                    <p className="max-w-2xl mx-auto text-lg text-gray-600">
+                    <p className="max-w-2xl mx-auto text-lg text-muted">
                         With over 5 years of experience in web development, I&apos;ve built a strong foundation in creating functional and visually appealing websites.
                     </p>
                 </motion.div>
@@ -38,9 +38,9 @@ export default function About() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="space-y-6 text-gray-700"
+                        className="space-y-6 text-foreground/80"
                     >
-                        <h3 className="text-2xl font-semibold text-gray-900">My Journey</h3>
+                        <h3 className="text-2xl font-semibold text-foreground">My Journey</h3>
                         <p>
                             My coding journey started 5 years ago in the world of WordPress. I mastered the art of theme customization, PHP, and creating tailored solutions for clients.
                         </p>
@@ -55,12 +55,12 @@ export default function About() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        <h3 className="mb-6 text-2xl font-semibold text-gray-900">Technical Skills</h3>
+                        <h3 className="mb-6 text-2xl font-semibold text-foreground">Technical Skills</h3>
                         <div className="flex flex-wrap gap-3">
                             {skills.map((skill) => (
                                 <span
                                     key={skill}
-                                    className="px-4 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm"
+                                    className="px-4 py-2 text-sm font-medium text-foreground bg-background border border-border rounded-lg shadow-sm"
                                 >
                                     {skill}
                                 </span>

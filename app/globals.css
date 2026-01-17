@@ -3,17 +3,69 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Semantic Colors mapped to Tailwind v4 */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
 }
 
 :root {
+  /* Light Theme Tokens */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0a;
+
+  --primary: #2563eb;
+  /* Blue 600 */
+  --primary-foreground: #ffffff;
+
+  --secondary: #f1f5f9;
+  /* Gray 100 */
+  --secondary-foreground: #0f172a;
+  /* Gray 900 */
+
+  --accent: #06b6d4;
+  /* Cyan 500 */
+  --accent-foreground: #ffffff;
+
+  --muted: #64748b;
+  /* Slate 500 */
+  --muted-foreground: #94a3b8;
+  /* Slate 400 */
+
+  --surface: #f8fafc;
+  /* Gray 50 */
+  --border: #e2e8f0;
+  /* Gray 200 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020617;
+    /* Slate 950 */
+    --foreground: #f8fafc;
+
+    --primary: #3b82f6;
+    /* Blue 500 */
+    --primary-foreground: #ffffff;
+
+    --secondary: #1e293b;
+    /* Slate 800 */
+    --secondary-foreground: #f8fafc;
+
+    --accent: #22d3ee;
+    /* Cyan 400 */
+    --accent-foreground: #0891b2;
+
+    --surface: #0f172a;
+    --border: #1e293b;
   }
 }
 
@@ -21,5 +73,5 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  @apply bg-gray-50 text-gray-900 antialiased;
+  @apply antialiased min-h-screen;
 }

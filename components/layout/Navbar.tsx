@@ -15,9 +15,9 @@ export default function Navbar() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-white/70 border-b border-gray-200/50"
+            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-background/70 border-b border-border/50"
         >
-            <Link href="/" className="text-xl font-bold tracking-tight text-gray-900">
+            <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
                 Portfolio.
             </Link>
 
@@ -26,7 +26,7 @@ export default function Navbar() {
                     <li key={link.name}>
                         <Link
                             href={link.href}
-                            className="text-sm font-medium text-gray-600 transition-colors hover:text-black"
+                            className="text-sm font-medium text-muted transition-colors hover:text-primary"
                         >
                             {link.name}
                         </Link>

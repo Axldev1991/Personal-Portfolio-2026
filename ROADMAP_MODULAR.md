@@ -25,13 +25,13 @@ Esta guía establece los principios para construir un sistema web donde los comp
 
 ## 2. Estrategia de Estilos Globales
 
-### [ ] Centralización de Design Tokens
+### [x] Centralización de Design Tokens
 - **Objetivo:** Rebranding en minutos.
 - **Acción:** 
     - Definir colores, radios de borde y espaciados en `tailwind.config.ts` o variables CSS en `globals.css`.
     - Usar nombres semánticos: `--primary`, `--accent`, `--surface` en lugar de `blue-500`.
 
-### [ ] Adopción de Componentes "Headless"
+### [x] Adopción de Componentes "Headless"
 - **Acción:** Integrar Radix UI o Shadcn.
 - **Por qué:** Obtienes la funcionalidad y accesibilidad perfectas, pero tú tienes el control total del estilo (CSS/Tailwind).
 
