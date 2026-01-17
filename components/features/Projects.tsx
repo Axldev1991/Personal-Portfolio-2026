@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { getProjects } from "@/lib/data";
 import { Project } from "@/lib/types";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export function Projects() {
+    const { t, language } = useLanguage();
     const projects = getProjects();
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -24,10 +26,10 @@ export function Projects() {
             <div className="max-w-6xl px-6 mx-auto">
                 <div className="flex flex-col mb-20 gap-4">
                     <span className="text-accent font-mono text-sm tracking-widest uppercase">
-                        Selected Works
+                        {t("projects.title")}
                     </span>
                     <h2 className="text-5xl md:text-7xl font-black uppercase">
-                        Productions_
+                        {t("projects.subtitle")}
                     </h2>
                 </div>
 
@@ -36,14 +38,15 @@ export function Projects() {
                         <ProjectItem
                             key={project.title}
                             project={project}
+                            language={language}
                             onHover={() => setHoveredIndex(index)}
                             onLeave={() => setHoveredIndex(null)}
+                            stageLabel={t("projects.stage")}
                         />
                     ))}
                 </div>
             </div>
 
-            {/* Premium Hover Preview (V3 style) */}
             <AnimatePresence>
                 {hoveredIndex !== null && (
                     <motion.div
@@ -59,7 +62,6 @@ export function Projects() {
                         className="fixed top-0 left-0 w-[400px] aspect-video z-[50] pointer-events-none overflow-hidden rounded-xl glass-card hidden lg:block"
                     >
                         <div className="w-full h-full bg-secondary flex items-center justify-center text-muted font-mono text-xs italic">
-                            {/* In a real project, this would be <Image /> */}
                             IMAGE_PREVIEW_{projects[hoveredIndex].title.toUpperCase().replace(/\s+/g, "_")}
                         </div>
                     </motion.div>
@@ -69,18 +71,23 @@ export function Projects() {
     );
 }
 
-function ProjectItem({ project, onHover, onLeave }: { project: Project, onHover: () => void, onLeave: () => void }) {
+function ProjectItem({ project, language, onHover, onLeave, stageLabel }: { project: Project, language: string, onHover: () => void, onLeave: () => void, stageLabel: string }) {
+    const description = language === "es" && project.description_es ? project.description_es : project.description;
+
     return (
         <motion.div
             onMouseEnter={onHover}
             onMouseLeave={onLeave}
-            className="group flex items-center justify-between py-12 border-b border-border cursor-pointer hover:bg-surface/50 transition-colors px-4"
+            className="group flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-border cursor-pointer hover:bg-surface/50 transition-colors px-4 gap-6"
         >
             <div className="flex flex-col gap-2">
-                <span className="text-muted font-mono text-xs">2026_STAGE_01</span>
+                <span className="text-muted font-mono text-xs">{stageLabel}</span>
                 <h3 className="text-4xl md:text-6xl font-bold group-hover:translate-x-6 transition-transform duration-500">
                     {project.title}
                 </h3>
+                <p className="text-muted text-sm max-w-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    {description}
+                </p>
             </div>
 
             <div className="flex items-center gap-10">

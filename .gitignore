@@ -40,6 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# AI Internal Context
-AI_CONTEXT.md
-design_research/
+# AI & Private Context
+PRIVATE/

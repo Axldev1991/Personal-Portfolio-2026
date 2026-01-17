@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, MessageSquare, ArrowRight } from "lucide-react";
 import { useContact } from "@/hooks/useContact";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export function Contact() {
     const { contactData, handleEmailClick } = useContact();
+    const { t } = useLanguage();
 
     return (
         <section id="contact" className="py-40 bg-background border-t border-accent">
@@ -17,22 +19,22 @@ export function Contact() {
                             whileInView={{ opacity: 1, y: 0 }}
                             className="text-6xl md:text-8xl font-black uppercase leading-none"
                         >
-                            READY_TO<br />
-                            <span className="text-primary italic">COLLABORATE?</span>
+                            {t("contact.title")}<br />
+                            <span className="text-primary italic">{t("contact.subtitle")}</span>
                         </motion.h2>
 
                         <div className="space-y-8">
                             <p className="text-xl text-muted font-light max-w-sm">
-                                Always looking for bold projects and creative engineering challenges.
+                                {t("contact.bio")}
                             </p>
 
                             <div className="flex gap-12">
                                 <div className="space-y-2">
-                                    <p className="text-[10px] uppercase font-bold text-muted tracking-widest">Availability</p>
+                                    <p className="text-[10px] uppercase font-bold text-muted tracking-widest">{t("contact.availability")}</p>
                                     <p className="text-accent underline font-black">OPEN_FOR_WORK</p>
                                 </div>
                                 <div className="space-y-2">
-                                    <p className="text-[10px] uppercase font-bold text-muted tracking-widest">Location</p>
+                                    <p className="text-[10px] uppercase font-bold text-muted tracking-widest">{t("contact.location")}</p>
                                     <p className="text-foreground font-black">REMOTE / NYC</p>
                                 </div>
                             </div>
@@ -44,7 +46,7 @@ export function Contact() {
                             onClick={handleEmailClick}
                             className="group text-3xl md:text-5xl font-black border-b-4 border-primary pb-4 hover:text-accent hover:border-accent transition-all break-all"
                         >
-                            HELLO@{contactData.email.toUpperCase()}
+                            {t("contact.btn")}{contactData.email.toUpperCase()}
                         </button>
 
                         <div className="flex flex-wrap gap-4 w-full lg:justify-end">

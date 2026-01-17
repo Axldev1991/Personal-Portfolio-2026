@@ -2,16 +2,19 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Home, User, Briefcase, Mail, Github, Linkedin, Terminal } from "lucide-react";
-
-const navLinks = [
-    { name: "Main", href: "#hero", icon: Home },
-    { name: "Works", href: "#projects", icon: Briefcase },
-    { name: "About", href: "#about", icon: User },
-    { name: "Contact", href: "#contact", icon: Mail },
-];
+import { Home, User, Briefcase, Mail, Github, Linkedin, Terminal, Globe } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export function Navbar() {
+    const { t, language, setLanguage } = useLanguage();
+
+    const navLinks = [
+        { name: t("nav.main"), href: "#hero", icon: Home },
+        { name: t("nav.works"), href: "#projects", icon: Briefcase },
+        { name: t("nav.about"), href: "#about", icon: User },
+        { name: t("nav.contact"), href: "#contact", icon: Mail },
+    ];
+
     return (
         <aside className="fixed left-0 top-0 h-screen w-20 md:w-20 lg:w-20 border-r border-border bg-background/80 backdrop-blur-md z-[100] flex flex-col items-center justify-between py-10">
             <div className="flex flex-col items-center gap-12">
@@ -38,12 +41,19 @@ export function Navbar() {
             </div>
 
             <div className="flex flex-col gap-6 items-center">
-                <a href="#" className="text-muted hover:text-foreground transition-colors">
-                    <Github size={20} />
-                </a>
-                <a href="#" className="text-muted hover:text-foreground transition-colors">
-                    <Linkedin size={20} />
-                </a>
+                <button
+                    onClick={() => setLanguage(language === "en" ? "es" : "en")}
+                    className="flex flex-col items-center gap-1 text-muted hover:text-accent transition-colors group p-2 rounded-lg hover:bg-secondary"
+                >
+                    <Globe size={20} />
+                    <span className="text-[10px] font-black">{language.toUpperCase()}</span>
+                </button>
+
+                <div className="flex flex-col gap-4">
+                    <a href="#" className="text-muted hover:text-foreground transition-colors"><Github size={20} /></a>
+                    <a href="#" className="text-muted hover:text-foreground transition-colors"><Linkedin size={20} /></a>
+                </div>
+
                 <div className="w-px h-12 bg-border" />
                 <p className="[writing-mode:vertical-lr] text-[10px] uppercase tracking-widest text-muted font-bold">
                     V1.0_2026
