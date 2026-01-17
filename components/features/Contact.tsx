@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Mail, Github, Linkedin, MessageSquare } from "lucide-react";
 import { useContact } from "@/hooks/useContact";
 
 export default function Contact() {
