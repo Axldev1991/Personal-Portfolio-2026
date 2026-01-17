@@ -8,15 +8,15 @@ export function Hero() {
     const { t } = useLanguage();
 
     return (
-        <section id="hero" className="relative min-h-[90vh] flex flex-col justify-center px-6 md:px-20 overflow-hidden">
+        <section id="hero" className="relative min-h-[90vh] flex flex-col justify-center px-6 md:px-20 py-20 md:py-0 overflow-hidden">
             {/* Background Gradient Blurs */}
             <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
 
-            <div className="relative z-10">
+            <div className="relative z-10 w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="inline-block px-3 py-1 bg-accent text-black text-[10px] font-black uppercase tracking-[0.3em] rounded mb-8"
+                    className="inline-block px-3 py-1 bg-accent text-black text-[10px] font-black uppercase tracking-[0.3em] rounded mb-6 md:mb-8"
                 >
                     {t("hero.role")}
                 </motion.div>
@@ -25,10 +25,10 @@ export function Hero() {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="text-[12vw] md:text-[8vw] lg:text-[10vw] font-black leading-[0.85] uppercase flex flex-col"
+                    className="text-[14vw] md:text-[8vw] lg:text-[10vw] font-black leading-[0.8] uppercase flex flex-col gap-1"
                 >
                     <span>{t("hero.title1")}</span>
-                    <span className="text-primary">{t("hero.title2")}</span>
+                    <span className="text-primary italic">{t("hero.title2")}</span>
                     <span className="text-outline">{t("hero.title3")}</span>
                 </motion.h1>
 

@@ -36,14 +36,14 @@ export function About() {
     return (
         <section id="about" className="py-24 bg-background">
             <div className="max-w-6xl px-6 mx-auto">
-                <div className="grid lg:grid-cols-2 gap-20">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
                     <div className="space-y-12">
                         <div className="space-y-4">
                             <span className="text-accent font-mono text-sm tracking-widest uppercase">{t("about.subtitle")}</span>
-                            <h2 className="text-5xl font-black">{t("about.title")}</h2>
+                            <h2 className="text-4xl md:text-5xl font-black">{t("about.title")}</h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                             {stats.map((stat, i) => (
                                 <motion.div
                                     key={stat.label}
@@ -54,7 +54,7 @@ export function About() {
                                 >
                                     <stat.icon className="text-primary group-hover:text-accent transition-colors" size={24} />
                                     <p className="text-muted text-[10px] uppercase font-bold tracking-widest">{stat.label}</p>
-                                    <p className="text-3xl font-black">{stat.value}</p>
+                                    <p className="text-2xl md:text-3xl font-black">{stat.value}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -103,25 +103,25 @@ export function About() {
 
                     <div className="space-y-12">
                         <div className="space-y-6">
-                            <h3 className="text-3xl font-bold italic text-primary">{t("about.bio")}</h3>
+                            <h3 className="text-xl md:text-3xl font-bold italic text-primary leading-tight">{t("about.bio")}</h3>
                         </div>
 
                         <div className="space-y-6">
                             <p className="text-xs font-black uppercase tracking-[0.4em] text-muted">{t("about.stack")}</p>
-                            <div className="flex flex-wrap gap-3">
+                            <div className="flex flex-wrap gap-2 md:gap-3">
                                 {["HTML5", "CSS3", "JavaScript", "WordPress", "Elementor", "PHP", "Figma", "Next.js", "React", "TailwindCSS"].map(skill => (
-                                    <span key={skill} className="px-4 py-2 bg-secondary/50 border border-border text-xs rounded-full hover:border-accent transition-colors">
+                                    <span key={skill} className="px-3 md:px-4 py-1.5 md:py-2 bg-secondary/50 border border-border text-[10px] md:text-xs rounded-full hover:border-accent transition-colors">
                                         {skill}
                                     </span>
                                 ))}
                             </div>
                         </div>
 
-                        <div className="p-8 border-2 border-dashed border-primary/20 rounded-2xl bg-primary/5 flex items-center gap-6">
-                            <div className="size-16 bg-primary/10 rounded-full flex items-center justify-center">
-                                <Code className="text-primary" />
+                        <div className="p-6 md:p-8 border-2 border-dashed border-primary/20 rounded-2xl bg-primary/5 flex flex-col md:flex-row items-center gap-4 md:gap-6 text-center md:text-left">
+                            <div className="size-12 md:size-16 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                                <Code className="text-primary" size={20} />
                             </div>
-                            <p className="text-sm italic text-muted">
+                            <p className="text-xs md:text-sm italic text-muted">
                                 "Code is like humor. When you have to explain it, it’s bad."
                             </p>
                         </div>
