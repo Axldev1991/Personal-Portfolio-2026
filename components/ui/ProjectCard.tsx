@@ -10,7 +10,14 @@ interface ProjectCardProps extends Project {
     index: number;
 }
 
-export function ProjectCard({ title, description, tags, link, github, index }: ProjectCardProps) {
+export function ProjectCard({
+    title,
+    description,
+    tags,
+    link = "#",
+    github = "#",
+    index
+}: ProjectCardProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
