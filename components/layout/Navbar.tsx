@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Home, User, Briefcase, Mail, Github, Linkedin, Terminal, Globe } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
+import { useContact } from "@/hooks/useContact";
 
 export function Navbar() {
     const { t, language, setLanguage } = useLanguage();
+    const { contactData } = useContact();
 
     const navLinks = [
         { name: t("nav.main"), href: "#hero", icon: Home },
@@ -50,8 +52,12 @@ export function Navbar() {
                 </button>
 
                 <div className="flex flex-col gap-4">
-                    <a href="#" className="text-muted hover:text-foreground transition-colors"><Github size={20} /></a>
-                    <a href="#" className="text-muted hover:text-foreground transition-colors"><Linkedin size={20} /></a>
+                    <a href={contactData.github} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors">
+                        <Github size={20} />
+                    </a>
+                    <a href={contactData.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors">
+                        <Linkedin size={20} />
+                    </a>
                 </div>
 
                 <div className="w-px h-12 bg-border" />

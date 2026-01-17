@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, Code, Terminal, History } from "lucide-react";
+import { Briefcase, Code, Terminal, History, GraduationCap } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 
 export function About() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     const stats = [
         { label: t("nav.works"), value: "30+", icon: Briefcase },
@@ -15,19 +15,22 @@ export function About() {
 
     const experience = [
         {
-            role: "Senior Front-end Developer",
-            company: "TechNova Solutions",
-            period: "2024 - Present",
-            description_en: "Leading the UI transformation and modular architecture implementation.",
-            description_es: "Liderando la transformación de la interfaz de usuario y la implementación de arquitectura modular.",
+            role: "Full-stack Developer (Freelance)",
+            company: "Custom Digital Solutions",
+            period: "2019 - Present",
+            description_en: "Developed 30+ custom websites using WordPress, Elementor, and modern React/Next.js architectures.",
+            description_es: "Desarrollé más de 30 sitios web personalizados utilizando WordPress, Elementor y arquitecturas modernas de React/Next.js.",
         },
+    ];
+
+    const education = [
         {
-            role: "UI/UX Developer",
-            company: "Digital Craft Studio",
-            period: "2022 - 2024",
-            description_en: "Specialized in high-performance animations and design systems.",
-            description_es: "Especializado en animaciones de alto rendimiento y sistemas de diseño.",
-        },
+            degree: "Tecnicatura Universitaria en Programación",
+            institution: "UTN FRA",
+            period: "2025 - Present",
+            description_en: "Currently studying advanced programming logic, data structures, and software engineering.",
+            description_es: "Cursando lógica de programación avanzada, estructuras de datos e ingeniería de software.",
+        }
     ];
 
     return (
@@ -56,6 +59,7 @@ export function About() {
                             ))}
                         </div>
 
+                        {/* Experience */}
                         <div className="flex flex-col gap-6">
                             {experience.map((exp, i) => (
                                 <div key={exp.company} className="relative pl-10 border-l border-border group">
@@ -69,9 +73,29 @@ export function About() {
                                             <span className="text-muted text-[10px] uppercase font-black">{exp.period}</span>
                                         </div>
                                         <p className="text-sm text-muted leading-relaxed">
-                                            {t("language") === "es" ? exp.description_es : exp.description_en}
+                                            {language === "es" ? exp.description_es : exp.description_en}
                                         </p>
                                     </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Education */}
+                        <div className="space-y-6">
+                            <h3 className="text-2xl font-bold uppercase tracking-widest flex items-center gap-3">
+                                <GraduationCap size={24} className="text-accent" />
+                                Education_
+                            </h3>
+                            {education.map((edu, i) => (
+                                <div key={edu.institution} className="glass-card p-6 rounded-xl border-l-4 border-accent">
+                                    <div className="flex justify-between items-start mb-2">
+                                        <h4 className="font-bold">{edu.degree}</h4>
+                                        <span className="text-muted text-[10px] font-black uppercase">{edu.period}</span>
+                                    </div>
+                                    <p className="text-primary font-mono text-xs mb-2">{edu.institution}</p>
+                                    <p className="text-xs text-muted">
+                                        {language === "es" ? edu.description_es : edu.description_en}
+                                    </p>
                                 </div>
                             ))}
                         </div>
@@ -85,7 +109,7 @@ export function About() {
                         <div className="space-y-6">
                             <p className="text-xs font-black uppercase tracking-[0.4em] text-muted">{t("about.stack")}</p>
                             <div className="flex flex-wrap gap-3">
-                                {["Next.js", "React", "TypeScript", "TailwindCSS", "Framer Motion", "Three.js", "Node.js", "PostgreSQL"].map(skill => (
+                                {["HTML5", "CSS3", "JavaScript", "WordPress", "Elementor", "PHP", "Figma", "Next.js", "React", "TailwindCSS"].map(skill => (
                                     <span key={skill} className="px-4 py-2 bg-secondary/50 border border-border text-xs rounded-full hover:border-accent transition-colors">
                                         {skill}
                                     </span>

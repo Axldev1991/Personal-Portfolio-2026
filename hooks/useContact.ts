@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo } from "react";
 
 export interface ContactData {
     email: string;
@@ -10,12 +10,12 @@ export interface ContactData {
 }
 
 export const useContact = () => {
-    const [contactData] = useState<ContactData>({
-        email: "contact@example.com",
-        github: "https://github.com/Axldev1991",
-        linkedin: "#",
-        whatsapp: "#",
-    });
+    const contactData: ContactData = useMemo(() => ({
+        email: "axelcastellano91@gmail.com", // Inferred or standard based on context
+        github: "https://github.com/Axldev1991/",
+        linkedin: "https://www.linkedin.com/in/axel-castellano-guti%C3%A9rrez-631273202/",
+        whatsapp: "https://wa.me/541150366645",
+    }), []);
 
     const handleEmailClick = () => {
         window.location.href = `mailto:${contactData.email}`;
