@@ -4,7 +4,7 @@ Esta guía establece los principios para construir un sistema web donde los comp
 
 ## 1. Arquitectura de Carpetas y Modularidad
 
-### [ ] Estructura de Directorios Atómica
+### [x] Estructura de Directorios Atómica
 - **Objetivo:** Separar la lógica de negocio de la UI pura.
 - **Acción:** Organizar carpetas en:
     - `@/components/ui`: Componentes básicos sin lógica (botones, inputs).
@@ -13,7 +13,7 @@ Esta guía establece los principios para construir un sistema web donde los comp
     - `@/lib`: Utilidades puras y configuraciones de terceros.
     - `@/hooks`: Toda la lógica de estado extraída.
 
-### [ ] Implementación de Barrel Files (`index.ts`)
+### [x] Implementación de Barrel Files (`index.ts`)
 - **Por qué:** Permite cambiar la estructura interna de una carpeta sin romper los `imports` en el resto de la aplicación.
 - **Acción:** Crear un `index.ts` en cada carpeta de componente para exportar solo lo necesario.
 

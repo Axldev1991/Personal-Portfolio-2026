@@ -17,8 +17,7 @@ export const metadata: Metadata = {
   description: "Web Developer Portfolio",
 };
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { Navbar, Footer } from "@/components/layout";
 
 export default function RootLayout({
   children,
