@@ -54,8 +54,8 @@ export function Hero() {
                         </button>
 
                         <a
-                            href="/cv.pdf"
-                            download
+                            href="/CV_Axel_Castellano.pdf"
+                            download="CV_Axel_Castellano.pdf"
                             className="border border-white/10 hover:border-accent hover:text-accent transition-all duration-300 h-16 md:h-20 px-8 md:px-12 rounded-xl flex items-center gap-4 group"
                         >
                             <span className="font-black uppercase tracking-widest text-sm md:text-base">Download CV_</span>
