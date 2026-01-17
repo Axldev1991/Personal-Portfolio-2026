@@ -19,9 +19,6 @@ export const metadata: Metadata = {
   },
   description: "Web Developer Portfolio specializing in Next.js, React, and modular architecture.",
   keywords: ["Next.js", "React", "Web Development", "Portfolio", "Tailwind CSS"],
-  icons: {
-    icon: "/icon.png",
-  },
 };
 
 import { Navbar, Footer } from "@/components/layout";
