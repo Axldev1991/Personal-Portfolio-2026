@@ -50,14 +50,14 @@ Esta guía establece los principios para construir un sistema web donde los comp
 
 ## 4. Configuración Técnica y Escalabilidad
 
-### [ ] Tipado Estricto (Interfaces)
+### [x] Tipado Estricto (Interfaces)
 - **Acción:** Definir `interfaces` para cada componente.
 - **Por qué:** Garantiza que si cambias la implementación de un componente, el "contrato" de datos se mantenga, evitando errores en tiempo de compilación.
 
-### [ ] Metadatos Dinámicos Independientes
+### [x] Metadatos Dinámicos Independientes
 - **Acción:** Implementar la función `generateMetadata` de Next.js separada del diseño visual de la página.
 
-### [ ] Capa de Abstracción de Datos (Services)
+### [x] Capa de Abstracción de Datos (Services)
 - **Acción:** Crear una capa de servicios para las llamadas a API/Base de datos.
 - **Por qué:** Si cambias tu backend de PHP a Java, solo modificas un archivo en el frontend.
 

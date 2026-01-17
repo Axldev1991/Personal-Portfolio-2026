@@ -13,8 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Web Developer Portfolio",
+  title: {
+    default: "Portfolio | Web Developer",
+    template: "%s | Portfolio"
+  },
+  description: "Web Developer Portfolio specializing in Next.js, React, and modular architecture.",
+  keywords: ["Next.js", "React", "Web Development", "Portfolio", "Tailwind CSS"],
 };
 
 import { Navbar, Footer } from "@/components/layout";
