@@ -46,11 +46,20 @@ export function Hero() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.6 }}
+                        className="flex flex-col md:flex-row gap-4"
                     >
                         <button className="bg-primary hover:bg-white hover:text-primary transition-all duration-300 h-16 md:h-20 px-8 md:px-12 rounded-xl flex items-center gap-4 group">
                             <span className="font-black uppercase tracking-widest text-sm md:text-base">{t("hero.cta")}</span>
                             <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                         </button>
+
+                        <a
+                            href="/cv.pdf"
+                            download
+                            className="border border-white/10 hover:border-accent hover:text-accent transition-all duration-300 h-16 md:h-20 px-8 md:px-12 rounded-xl flex items-center gap-4 group"
+                        >
+                            <span className="font-black uppercase tracking-widest text-sm md:text-base">Download CV_</span>
+                        </a>
                     </motion.div>
                 </div>
             </div>
@@ -59,12 +68,12 @@ export function Hero() {
             <div className="absolute bottom-10 left-0 w-full overflow-hidden py-10 border-y border-white/5 opacity-20">
                 <div className="flex whitespace-nowrap animate-marquee gap-10 text-4xl md:text-6xl font-black uppercase">
                     <span>Next.js_</span>
-                    <span className="text-primary">React_</span>
+                    <span className="text-primary">WordPress_</span>
                     <span>TypeScript_</span>
-                    <span className="text-accent">Three.js_</span>
+                    <span className="text-accent">Elementor_</span>
                     <span>Tailwind_</span>
-                    <span className="text-primary">PostgreSQL_</span>
-                    <span>Framer Motion_</span>
+                    <span className="text-primary">React_</span>
+                    <span>Custom Kits_</span>
                 </div>
             </div>
         </section>

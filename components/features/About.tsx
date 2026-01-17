@@ -8,9 +8,9 @@ export function About() {
     const { t } = useLanguage();
 
     const stats = [
-        { label: t("nav.works"), value: "48+", icon: Briefcase },
-        { label: t("about.subtitle"), value: "4 Years", icon: History },
-        { label: "Lines of Code", value: "2M+", icon: Terminal },
+        { label: t("nav.works"), value: "30+", icon: Briefcase },
+        { label: t("about.subtitle"), value: "5+ Years", icon: History },
+        { label: "WordPress Kits", value: "100+", icon: Terminal },
     ];
 
     const experience = [
