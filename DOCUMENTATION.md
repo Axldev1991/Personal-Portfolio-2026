@@ -17,20 +17,16 @@ A personal portfolio website built to showcase web development skills, specifica
 - **Configuration:** Set up `globals.css` with clean defaults and resolved Tailwind build issues.
 - **Utilities:** Added `cn` utility for class merging.
 
-### Phase 2: Component Implementation
-- **Navbar:** Sticky, glassmorphism effect using backdrop-blur. Responsive links.
-- **Hero Section:** High-impact introduction with staggered entry animations.
-- **About Section:** Storytelling approach focusing on professional growth.
-- **Projects Section:** Grid layout with reusable `ProjectCard` components.
-- **Contact Section:** Clean layout with social links and email CTA.
-- **Footer:** Simple copyright and tech stack credit.
+### Phase 3: Extreme Modularity & Scalability (In Progress)
+- **Roadmap:** Defined a technical roadmap for "Lego-like" architecture.
+- **Goals:** Decoupling UI from logic, centralizing design tokens, and preparing for future rebranding.
 
 ## Design Decisions
-- **Aesthetic:** "Minimalist but Animated". Clean white/gray backgrounds allowing content to pop.
-- **Interactivity:** Subtle hover states and smooth entrance animations to feel "premium" without clutter.
-- **Typography:** Using Geist Sans (Next.js default) for a modern, crisp look.
+- **Aesthetic:** "Minimalist but Animated".
+- **Architecture:** Transitioning to a modular structure using Slots and Barrel Files.
 
 ## Next Steps
-- [ ] Connect to GitHub Repository
+- [x] Connect to GitHub Repository
+- [x] Push initial code
+- [ ] Implement ROADMAP_MODULAR.md checklist
 - [ ] Deployment to Vercel
-- [ ] Content population (Real text and images)
