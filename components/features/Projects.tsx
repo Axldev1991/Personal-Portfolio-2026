@@ -61,8 +61,19 @@ export function Projects() {
                         exit={{ opacity: 0, scale: 0.8, rotate: 5 }}
                         className="fixed top-0 left-0 w-[400px] aspect-video z-[50] pointer-events-none overflow-hidden rounded-xl glass-card hidden lg:block"
                     >
-                        <div className="w-full h-full bg-secondary flex items-center justify-center text-muted font-mono text-xs italic">
-                            IMAGE_PREVIEW_{projects[hoveredIndex].title.toUpperCase().replace(/\s+/g, "_")}
+                        <div className="w-full h-full bg-secondary relative">
+                            {projects[hoveredIndex].image ? (
+                                <img
+                                    src={projects[hoveredIndex].image}
+                                    alt={projects[hoveredIndex].title}
+                                    className="w-full h-full object-cover"
+                                />
+                            ) : (
+                                <div className="w-full h-full flex items-center justify-center text-muted font-mono text-xs italic">
+                                    NO_IMAGE_AVAILABLE
+                                </div>
+                            )}
+                            <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
                         </div>
                     </motion.div>
                 )}
