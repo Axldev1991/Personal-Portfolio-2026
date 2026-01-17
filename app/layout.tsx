@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 };
 
 import { Navbar, Footer } from "@/components/layout";
+import { CustomCursor } from "@/components/ui";
 
 export default function RootLayout({
   children,
@@ -30,12 +31,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <div className="grain-overlay" />
+        <CustomCursor />
         <Navbar />
-        {children}
-        <Footer />
+        <main className="min-h-screen md:pl-20">
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );

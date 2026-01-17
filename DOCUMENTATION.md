@@ -21,6 +21,14 @@ A personal portfolio website built to showcase web development skills, specifica
 - **Roadmap:** Defined a technical roadmap for "Lego-like" architecture.
 - **Goals:** Decoupling UI from logic, centralizing design tokens, and preparing for future rebranding.
 
+### Phase 4: Hybrid Premium Design
+- **Fase 4: Diseño Hybrid Premium (Fusión V1+V2+V3):** Implementación de estética de alto nivel basada en 3 propuestas externas. Navegación lateral, Glassmorphism avanzado, cursores personalizados, textura de ruido y listado de proyectos con preview al hover.
+
+### 🎨 Decisiones de Diseño
+1.  **Moduralidad:** Uso de inyecciones de dependencias vía Props y Slots.
+2.  **Aesthetics:** Sistema de tokens semánticos en `globals.css` para cambios globales instantáneos.
+3.  **Hybrid Strategy:** Selección de los mejores elementos de 3 tendencias: Disruptivo (V1), Moderno (V2) y Minimalista Premium (V3).
+
 ## Design Decisions
 - **Aesthetic:** "Minimalist but Animated".
 - **Architecture:** Transitioning to a modular structure using Slots and Barrel Files.

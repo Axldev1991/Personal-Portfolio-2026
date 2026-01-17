@@ -1,59 +1,75 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, MessageSquare } from "lucide-react";
+import { Mail, Github, Linkedin, MessageSquare, ArrowRight } from "lucide-react";
 import { useContact } from "@/hooks/useContact";
 
-export default function Contact() {
+export function Contact() {
     const { contactData, handleEmailClick } = useContact();
 
     return (
-        <section id="contact" className="py-24 bg-background">
-            <div className="max-w-4xl px-6 mx-auto text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                        Let&apos;s Work Together
-                    </h2>
-                    <p className="mt-4 text-lg text-muted">
-                        Have a project in mind or want to discuss modern web development? I&apos;d love to hear from you.
-                    </p>
+        <section id="contact" className="py-40 bg-background border-t border-accent">
+            <div className="max-w-6xl px-6 mx-auto">
+                <div className="grid lg:grid-cols-2 gap-20">
+                    <div className="space-y-12">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            className="text-6xl md:text-8xl font-black uppercase leading-none"
+                        >
+                            READY_TO<br />
+                            <span className="text-primary italic">COLLABORATE?</span>
+                        </motion.h2>
 
-                    <div className="flex flex-wrap justify-center gap-6 mt-12">
+                        <div className="space-y-8">
+                            <p className="text-xl text-muted font-light max-w-sm">
+                                Always looking for bold projects and creative engineering challenges.
+                            </p>
+
+                            <div className="flex gap-12">
+                                <div className="space-y-2">
+                                    <p className="text-[10px] uppercase font-bold text-muted tracking-widest">Availability</p>
+                                    <p className="text-accent underline font-black">OPEN_FOR_WORK</p>
+                                </div>
+                                <div className="space-y-2">
+                                    <p className="text-[10px] uppercase font-bold text-muted tracking-widest">Location</p>
+                                    <p className="text-foreground font-black">REMOTE / NYC</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col justify-center items-start lg:items-end gap-12">
                         <button
                             onClick={handleEmailClick}
-                            className="flex items-center gap-3 px-8 py-4 text-lg font-medium text-primary-foreground transition-all bg-primary rounded-xl hover:opacity-90 hover:scale-105 cursor-pointer"
+                            className="group text-3xl md:text-5xl font-black border-b-4 border-primary pb-4 hover:text-accent hover:border-accent transition-all break-all"
                         >
-                            <Mail className="w-6 h-6" /> Send me an Email
+                            HELLO@{contactData.email.toUpperCase()}
                         </button>
-                    </div>
 
-                    <div className="flex justify-center gap-8 mt-16">
-                        <a href={contactData.github} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 text-muted transition-colors hover:text-foreground group">
-                            <div className="p-4 transition-colors bg-secondary rounded-full group-hover:bg-secondary/80">
-                                <Github className="w-6 h-6" />
-                            </div>
-                            <span className="text-sm font-medium">GitHub</span>
-                        </a>
-                        <a href={contactData.linkedin} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 text-muted transition-colors hover:text-primary group">
-                            <div className="p-4 transition-colors bg-secondary rounded-full group-hover:bg-primary/10">
-                                <Linkedin className="w-6 h-6" />
-                            </div>
-                            <span className="text-sm font-medium">LinkedIn</span>
-                        </a>
-                        <a href={contactData.whatsapp} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 text-muted transition-colors hover:text-green-600 group">
-                            <div className="p-4 transition-colors bg-secondary rounded-full group-hover:bg-green-50">
-                                <MessageSquare className="w-6 h-6" />
-                            </div>
-                            <span className="text-sm font-medium">WhatsApp</span>
-                        </a>
+                        <div className="flex flex-wrap gap-4 w-full lg:justify-end">
+                            <SocialLink icon={Github} label="GitHub" href={contactData.github} color="hover:border-white" />
+                            <SocialLink icon={Linkedin} label="LinkedIn" href={contactData.linkedin} color="hover:border-primary" />
+                            <SocialLink icon={MessageSquare} label="WhatsApp" href={contactData.whatsapp} color="hover:border-accent" />
+                        </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
+    );
+}
+
+function SocialLink({ icon: Icon, label, href, color }: { icon: any, label: string, href: string, color: string }) {
+    return (
+        <a
+            href={href}
+            className={`flex-1 min-w-[140px] glass-card p-6 rounded-2xl flex flex-col gap-4 group transition-all ${color}`}
+        >
+            <div className="flex justify-between items-start">
+                <Icon size={20} className="text-muted group-hover:text-foreground transition-colors" />
+                <ArrowRight size={16} className="text-muted opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </div>
+            <p className="font-black text-sm uppercase tracking-widest">{label}</p>
+        </a>
     );
 }

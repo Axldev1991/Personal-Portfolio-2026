@@ -1,72 +1,107 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Briefcase, Code, Terminal, History } from "lucide-react";
 
-const skills = [
-    "HTML5 & CSS3",
-    "WordPress Development",
-    "PHP",
-    "JavaScript (ES6+)",
-    "React & Next.js",
-    "Tailwind CSS",
-    "Java",
-    "Git & GitHub",
+const stats = [
+    { label: "Projects", value: "48+", icon: Briefcase },
+    { label: "Experience", value: "4 Years", icon: History },
+    { label: "Lines of Code", value: "2M+", icon: Terminal },
 ];
 
-export default function About() {
+const experience = [
+    {
+        role: "Senior Front-end Developer",
+        company: "TechNova Solutions",
+        period: "2024 - Present",
+        description: "Leading the UI transformation and modular architecture implementation.",
+    },
+    {
+        role: "UI/UX Developer",
+        company: "Digital Craft Studio",
+        period: "2022 - 2024",
+        description: "Specialized in high-performance animations and design systems.",
+    },
+];
+
+export function About() {
     return (
-        <section id="about" className="py-24 bg-surface">
-            <div className="max-w-4xl px-6 mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="space-y-6 text-center"
-                >
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                        About Me
-                    </h2>
-                    <p className="max-w-2xl mx-auto text-lg text-muted">
-                        With over 5 years of experience in web development, I&apos;ve built a strong foundation in creating functional and visually appealing websites.
-                    </p>
-                </motion.div>
+        <section id="about" className="py-24 bg-background">
+            <div className="max-w-6xl px-6 mx-auto">
+                <div className="grid lg:grid-cols-2 gap-20">
+                    {/* Stats (V2 style) */}
+                    <div className="space-y-12">
+                        <div className="space-y-4">
+                            <span className="text-accent font-mono text-sm tracking-widest uppercase">Trajectory</span>
+                            <h2 className="text-5xl font-black">Experience_</h2>
+                        </div>
 
-                <div className="grid gap-12 mt-16 md:grid-cols-2">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="space-y-6 text-foreground/80"
-                    >
-                        <h3 className="text-2xl font-semibold text-foreground">My Journey</h3>
-                        <p>
-                            My coding journey started 5 years ago in the world of WordPress. I mastered the art of theme customization, PHP, and creating tailored solutions for clients.
-                        </p>
-                        <p>
-                            Recently, I&apos;ve expanded my horizon into the modern JavaScript ecosystem. I&apos;m now passionate about building scalable, high-performance web applications using <strong>Next.js</strong> and <strong>React</strong>. This transition has allowed me to combine my deep understanding of web fundamentals with the power of modern component-based architecture.
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                    >
-                        <h3 className="mb-6 text-2xl font-semibold text-foreground">Technical Skills</h3>
-                        <div className="flex flex-wrap gap-3">
-                            {skills.map((skill) => (
-                                <span
-                                    key={skill}
-                                    className="px-4 py-2 text-sm font-medium text-foreground bg-background border border-border rounded-lg shadow-sm"
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {stats.map((stat, i) => (
+                                <motion.div
+                                    key={stat.label}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: i * 0.1 }}
+                                    className="glass-card p-6 rounded-xl flex flex-col gap-2 group hover:border-accent transition-colors"
                                 >
-                                    {skill}
-                                </span>
+                                    <stat.icon className="text-primary group-hover:text-accent transition-colors" size={24} />
+                                    <p className="text-muted text-[10px] uppercase font-bold tracking-widest">{stat.label}</p>
+                                    <p className="text-3xl font-black">{stat.value}</p>
+                                </motion.div>
                             ))}
                         </div>
-                    </motion.div>
+
+                        <div className="flex flex-col gap-6">
+                            {experience.map((exp, i) => (
+                                <div key={exp.company} className="relative pl-10 border-l border-border group">
+                                    <div className="absolute left-[-5px] top-0 size-2.5 bg-primary rounded-full group-hover:bg-accent transition-colors" />
+                                    <div className="glass-card p-6 rounded-xl space-y-2">
+                                        <div className="flex justify-between items-start">
+                                            <div>
+                                                <h4 className="text-xl font-bold">{exp.role}</h4>
+                                                <p className="text-primary font-mono text-xs">{exp.company}</p>
+                                            </div>
+                                            <span className="text-muted text-[10px] uppercase font-black">{exp.period}</span>
+                                        </div>
+                                        <p className="text-sm text-muted leading-relaxed">
+                                            {exp.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Bio & Skills */}
+                    <div className="space-y-12">
+                        <div className="space-y-6">
+                            <h3 className="text-3xl font-bold italic text-primary">I create digital experiences that matter.</h3>
+                            <p className="text-muted text-lg leading-relaxed">
+                                My journey started with a simple vision: to bridge the gap between complex engineering and human-centered design. I don't just write code; I craft digital narratives.
+                            </p>
+                        </div>
+
+                        <div className="space-y-6">
+                            <p className="text-xs font-black uppercase tracking-[0.4em] text-muted">Core Stack</p>
+                            <div className="flex flex-wrap gap-3">
+                                {["Next.js", "React", "TypeScript", "TailwindCSS", "Framer Motion", "Three.js", "Node.js", "PostgreSQL"].map(skill => (
+                                    <span key={skill} className="px-4 py-2 bg-secondary/50 border border-border text-xs rounded-full hover:border-accent transition-colors">
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="p-8 border-2 border-dashed border-primary/20 rounded-2xl bg-primary/5 flex items-center gap-6">
+                            <div className="size-16 bg-primary/10 rounded-full flex items-center justify-center">
+                                <Code className="text-primary" />
+                            </div>
+                            <p className="text-sm italic text-muted">
+                                "Code is like humor. When you have to explain it, it’s bad."
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
