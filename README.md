@@ -48,4 +48,5 @@ Personal portfolio as a **Front-end Developer & WordPress Architect**. A high-pe
    ```
 
 ## 📄 License
-Private use for Axel Castellano. Built by Antigravity (Advanced AI Coding Assistant).
+
+This project is private and intended for the personal portfolio of Axel Castellano. All rights reserved.
