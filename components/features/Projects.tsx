@@ -61,19 +61,18 @@ export function Projects() {
                         exit={{ opacity: 0, scale: 0.8, rotate: 5 }}
                         className="fixed top-0 left-0 w-[400px] aspect-video z-[50] pointer-events-none overflow-hidden rounded-xl glass-card hidden lg:block"
                     >
-                        <div className="w-full h-full bg-secondary relative">
+                        <div className="w-full h-full bg-secondary relative border border-white/10 shadow-2xl overflow-hidden rounded-xl">
                             {projects[hoveredIndex].image ? (
                                 <img
                                     src={projects[hoveredIndex].image}
                                     alt={projects[hoveredIndex].title}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover object-top"
                                 />
                             ) : (
                                 <div className="w-full h-full flex items-center justify-center text-muted font-mono text-xs italic">
-                                    NO_IMAGE_AVAILABLE
+                                    PREVIEW_NOT_READY
                                 </div>
                             )}
-                            <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
                         </div>
                     </motion.div>
                 )}

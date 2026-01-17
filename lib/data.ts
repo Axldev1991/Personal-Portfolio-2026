@@ -29,12 +29,12 @@ export const PROJECTS_DATA: Project[] = [
         github: "#",
     },
     {
-        title: "Bochain",
-        description: "Minimalist Web3 site for tech startups with headless components and light animations.",
-        description_es: "Sitio Web3 minimalista para startups tecnológicas con componentes headless y animaciones ligeras.",
-        tags: ["Web3", "Blockchain", "Dark UI"],
-        image: "/projects/bochain.png",
-        link: "https://bochain.io/",
+        title: "CAIC",
+        description: "Institutional catalog for the film industry. Features rich media handling and category filtering.",
+        description_es: "Catálogo institucional para la industria cinematográfica. Manejo de media enriquecida y filtrado por categorías.",
+        tags: ["Film Industry", "Media", "Catalog"],
+        image: "/projects/caic.png",
+        link: "https://caic-cine.org.ar/",
         github: "#",
     },
     {
@@ -56,12 +56,12 @@ export const PROJECTS_DATA: Project[] = [
         github: "#",
     },
     {
-        title: "Lucky Feet Shoes",
-        description: "E-commerce specialized in conversion funnel optimization and dynamic inventory management.",
-        description_es: "E-commerce especializado en la optimización del embudo de conversión y gestión dinámica de inventario.",
-        tags: ["E-commerce", "CRO", "Retail"],
-        image: "/projects/luckyfeet.png",
-        link: "https://luckyfeetshoes.com/",
+        title: "Frontline",
+        description: "Fitness services landing page. Focused on lead generation and external CRM integration.",
+        description_es: "Landing page de servicios de fitness. Foco en la captura de leads e integración con CRM externos.",
+        tags: ["Fitness", "Lead Gen", "Marketing"],
+        image: "/projects/frontline.png", // This might be missing, but I'll set it up
+        link: "https://frontlineconditioning.com/",
         github: "#",
     },
 ];
