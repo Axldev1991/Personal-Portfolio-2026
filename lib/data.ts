@@ -60,8 +60,17 @@ export const PROJECTS_DATA: Project[] = [
         description: "Fitness services landing page. Focused on lead generation and external CRM integration.",
         description_es: "Landing page de servicios de fitness. Foco en la captura de leads e integración con CRM externos.",
         tags: ["Fitness", "Lead Gen", "Marketing"],
-        image: "/projects/frontline.png", // This might be missing, but I'll set it up
+        image: "/projects/frontline.png",
         link: "https://frontlineconditioning.com/",
+        github: "#",
+    },
+    {
+        title: "Lucky Feet Shoes",
+        description: "E-commerce specialized in conversion funnel optimization and dynamic inventory management.",
+        description_es: "E-commerce especializado en la optimización del embudo de conversión y gestión dinámica de inventario.",
+        tags: ["E-commerce", "CRO", "Retail"],
+        image: "/projects/luckyfeet.png",
+        link: "https://luckyfeetshoes.com/",
         github: "#",
     },
 ];
