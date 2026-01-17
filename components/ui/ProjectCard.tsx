@@ -4,13 +4,9 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 
-interface ProjectCardProps {
-    title: string;
-    description: string;
-    tags: string[];
-    image?: string; // Made optional for now since we use placeholder
-    link?: string;
-    github?: string;
+import { Project } from "@/lib/types";
+
+interface ProjectCardProps extends Project {
     index: number;
 }
 

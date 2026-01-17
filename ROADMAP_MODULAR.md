@@ -39,11 +39,11 @@ Esta guía establece los principios para construir un sistema web donde los comp
 
 ## 3. Lógica de Componentes (Separación de Preocupaciones)
 
-### [ ] Extracción a Hooks Personalizados
+### [x] Extracción a Hooks Personalizados
 - **Acción:** Si un componente tiene más de un `useState` o lógica de `useEffect` compleja, moverlo a un hook (ej. `useContactForm`).
 - **Por qué:** El componente visual se convierte en una "cáscara" que solo recibe datos y funciones, siendo 100% reemplazable.
 
-### [ ] Separación RSC vs Cliente
+### [x] Separación RSC vs Cliente
 - **Acción:** Mantener los componentes de "Layout" y "Contenedores de Datos" como Server Components. Solo los elementos interactivos (botones, formularios) deben ser Client Components.
 
 ---
