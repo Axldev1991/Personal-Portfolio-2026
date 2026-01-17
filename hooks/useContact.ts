@@ -11,7 +11,7 @@ export interface ContactData {
 
 export const useContact = () => {
     const contactData: ContactData = useMemo(() => ({
-        email: "axelcastellano91@gmail.com", // Inferred or standard based on context
+        email: "castellanoaxl@gmail.com",
         github: "https://github.com/Axldev1991/",
         linkedin: "https://www.linkedin.com/in/axel-castellano-guti%C3%A9rrez-631273202/",
         whatsapp: "https://wa.me/541150366645",
