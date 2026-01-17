@@ -35,7 +35,7 @@ export function Contact() {
                                 </div>
                                 <div className="space-y-2">
                                     <p className="text-[10px] uppercase font-bold text-muted tracking-widest">{t("contact.location")}</p>
-                                    <p className="text-foreground font-black">REMOTE / NYC</p>
+                                    <p className="text-foreground font-black">BUENOS AIRES, ARG</p>
                                 </div>
                             </div>
                         </div>
