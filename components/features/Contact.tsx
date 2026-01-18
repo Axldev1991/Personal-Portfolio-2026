@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, MessageSquare, ArrowRight } from "lucide-react";
 import { useContact } from "@/hooks/useContact";
 import { useLanguage } from "@/hooks/useLanguage";
+import { ContactForm } from "./ContactForm";
 
 export function Contact() {
     const { contactData, handleEmailClick } = useContact();
@@ -41,18 +42,21 @@ export function Contact() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col justify-center items-start lg:items-end gap-12">
-                        <button
-                            onClick={handleEmailClick}
-                            className="group text-xl md:text-5xl font-black border-b-2 md:border-b-4 border-primary pb-4 hover:text-accent hover:border-accent transition-all break-all text-left"
-                        >
-                            {t("contact.btn")}{contactData.email.toUpperCase()}
-                        </button>
+                    <div className="flex flex-col justify-start gap-12">
+                        <ContactForm />
 
-                        <div className="flex flex-wrap gap-4 w-full lg:justify-end">
-                            <SocialLink icon={Github} label="GitHub" href={contactData.github} color="hover:border-white" />
-                            <SocialLink icon={Linkedin} label="LinkedIn" href={contactData.linkedin} color="hover:border-primary" />
-                            <SocialLink icon={MessageSquare} label="WhatsApp" href={contactData.whatsapp} color="hover:border-accent" />
+                        <div className="space-y-6 w-full">
+                            <button
+                                onClick={handleEmailClick}
+                                className="group text-sm md:text-xl font-bold border-b border-primary/30 pb-2 hover:text-accent hover:border-accent transition-all break-all text-left opacity-60 hover:opacity-100"
+                            >
+                                {t("contact.btn")}{contactData.email.toLowerCase()}
+                            </button>
+
+                            <div className="flex flex-wrap gap-4 w-full">
+                                <SocialLink icon={Github} label="GitHub" href={contactData.github} color="hover:border-white/40" />
+                                <SocialLink icon={Linkedin} label="LinkedIn" href={contactData.linkedin} color="hover:border-primary/40" />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -37,6 +37,10 @@ export const translations = {
         "contact.availability": "Availability",
         "contact.location": "Location",
         "contact.btn": "GET_IN_TOUCH@",
+        "contact.form.name": "Your Name_",
+        "contact.form.email": "Email_",
+        "contact.form.message": "Message_",
+        "contact.form.submit": "Send Message_",
     },
     es: {
         "nav.main": "Inicio",
@@ -62,6 +66,10 @@ export const translations = {
         "contact.availability": "Disponibilidad",
         "contact.location": "Ubicación",
         "contact.btn": "CONTACTAR@",
+        "contact.form.name": "Tu Nombre_",
+        "contact.form.email": "Email_",
+        "contact.form.message": "Mensaje_",
+        "contact.form.submit": "Enviar Mensaje_",
     }
 };
 
