@@ -6,7 +6,15 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
     try {
-        const { name, email, message } = await request.json();
+        const body = await request.json();
+        const { name, email, message, _gotcha } = body;
+
+        // 🛡️ Honeypot Trap: If _gotcha is filled, it's a bot.
+        if (_gotcha) {
+            console.warn(`🤖 Bot detected! Honeypot trap triggered by IP: ${request.headers.get("x-forwarded-for") || "unknown"}`);
+            // Return fake success to confuse the bot
+            return NextResponse.json({ success: true });
+        }
 
         const { data, error } = await resend.emails.send({
             from: 'Portfolio Contact <onboarding@resend.dev>',
