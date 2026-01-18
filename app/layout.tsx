@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   keywords: ["Next.js", "React", "WordPress Architect", "Web Development", "Portfolio", "Tailwind CSS", "Axel Castellano"],
   authors: [{ name: "Axel Castellano" }],
   creator: "Axel Castellano",
-  themeColor: "#050505",
+  metadataBase: new URL("http://localhost:3000"), // Updated during build to production URL
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -45,6 +45,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.png",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#050505",
 };
 
 import { Navbar, Footer } from "@/components/layout";
