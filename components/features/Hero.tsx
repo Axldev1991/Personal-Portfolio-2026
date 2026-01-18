@@ -25,7 +25,7 @@ export function Hero() {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="text-[14vw] md:text-[8vw] lg:text-[10vw] font-black leading-[0.8] uppercase flex flex-col gap-1"
+                    className="text-[11vw] md:text-[8vw] lg:text-[10vw] font-black leading-[0.8] uppercase flex flex-col gap-1 overflow-hidden"
                 >
                     <span>{t("hero.title1")}</span>
                     <span className="text-primary italic">{t("hero.title2")}</span>

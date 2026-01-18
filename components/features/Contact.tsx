@@ -17,7 +17,7 @@ export function Contact() {
                         <motion.h2
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            className="text-6xl md:text-8xl font-black uppercase leading-none"
+                            className="text-4xl md:text-8xl font-black uppercase leading-none"
                         >
                             {t("contact.title")}<br />
                             <span className="text-primary italic">{t("contact.subtitle")}</span>
@@ -44,7 +44,7 @@ export function Contact() {
                     <div className="flex flex-col justify-center items-start lg:items-end gap-12">
                         <button
                             onClick={handleEmailClick}
-                            className="group text-3xl md:text-5xl font-black border-b-4 border-primary pb-4 hover:text-accent hover:border-accent transition-all break-all"
+                            className="group text-xl md:text-5xl font-black border-b-2 md:border-b-4 border-primary pb-4 hover:text-accent hover:border-accent transition-all break-all text-left"
                         >
                             {t("contact.btn")}{contactData.email.toUpperCase()}
                         </button>

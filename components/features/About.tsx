@@ -40,7 +40,7 @@ export function About() {
                     <div className="space-y-12">
                         <div className="space-y-4">
                             <span className="text-accent font-mono text-sm tracking-widest uppercase">{t("about.subtitle")}</span>
-                            <h2 className="text-4xl md:text-5xl font-black">{t("about.title")}</h2>
+                            <h2 className="text-3xl md:text-5xl font-black">{t("about.title")}</h2>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -103,7 +103,7 @@ export function About() {
 
                     <div className="space-y-12">
                         <div className="space-y-6">
-                            <h3 className="text-xl md:text-3xl font-bold italic text-primary leading-tight">{t("about.bio")}</h3>
+                            <h3 className="text-lg md:text-3xl font-bold italic text-primary leading-tight">{t("about.bio")}</h3>
                         </div>
 
                         <div className="space-y-6">

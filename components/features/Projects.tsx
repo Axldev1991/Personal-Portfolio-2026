@@ -28,7 +28,7 @@ export function Projects() {
                     <span className="text-accent font-mono text-sm tracking-widest uppercase">
                         {t("projects.title")}
                     </span>
-                    <h2 className="text-5xl md:text-7xl font-black uppercase">
+                    <h2 className="text-4xl md:text-7xl font-black uppercase">
                         {t("projects.subtitle")}
                     </h2>
                 </div>
@@ -92,7 +92,7 @@ function ProjectItem({ project, language, onHover, onLeave, stageLabel }: { proj
         >
             <div className="flex flex-col gap-2 w-full">
                 <span className="text-muted font-mono text-[10px] md:text-xs tracking-widest uppercase">{stageLabel}</span>
-                <h3 className="text-3xl md:text-6xl font-bold md:group-hover:translate-x-6 transition-transform duration-500 uppercase tracking-tighter">
+                <h3 className="text-[8vw] md:text-6xl font-bold md:group-hover:translate-x-6 transition-transform duration-500 uppercase tracking-tighter">
                     {project.title}
                 </h3>
                 <p className="text-muted text-sm max-w-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
