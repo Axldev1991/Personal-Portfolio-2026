@@ -13,14 +13,29 @@ export function ContactForm() {
         e.preventDefault();
         setStatus("loading");
 
-        // Simulating a form submission
-        // In production, you would use a Server Action or an API route with Resend/Formspree
-        setTimeout(() => {
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch("/api/send", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) throw new Error("Failed to send");
+
             setStatus("success");
             const form = e.target as HTMLFormElement;
             form.reset();
             setTimeout(() => setStatus("idle"), 5000);
-        }, 1500);
+        } catch (error) {
+            console.error("Error sending message:", error);
+            setStatus("error");
+            setTimeout(() => setStatus("idle"), 5000);
+        }
     };
 
     return (
@@ -69,8 +84,8 @@ export function ContactForm() {
                 type="submit"
                 disabled={status === "loading"}
                 className={`w-full h-16 rounded-xl flex items-center justify-center gap-4 group transition-all duration-500 overflow-hidden relative ${status === "success"
-                        ? "bg-accent text-black"
-                        : "bg-primary text-white hover:bg-white hover:text-primary"
+                    ? "bg-accent text-black"
+                    : "bg-primary text-white hover:bg-white hover:text-primary"
                     }`}
             >
                 {status === "loading" ? (
