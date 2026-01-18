@@ -48,10 +48,13 @@ export function Hero() {
                         transition={{ delay: 0.6 }}
                         className="flex flex-col md:flex-row gap-4"
                     >
-                        <button className="bg-primary hover:bg-white hover:text-primary transition-all duration-300 h-16 md:h-20 px-8 md:px-12 rounded-xl flex items-center gap-4 group">
+                        <a
+                            href="#contact"
+                            className="bg-primary hover:bg-white hover:text-primary transition-all duration-300 h-16 md:h-20 px-8 md:px-12 rounded-xl flex items-center gap-4 group cursor-pointer"
+                        >
                             <span className="font-black uppercase tracking-widest text-sm md:text-base">{t("hero.cta")}</span>
                             <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-                        </button>
+                        </a>
 
                         <a
                             href="/CV_Axel_Castellano.pdf"
