@@ -56,6 +56,7 @@ export function Contact() {
                             <div className="flex flex-wrap gap-4 w-full">
                                 <SocialLink icon={Github} label="GitHub" href={contactData.github} color="hover:border-white/40" />
                                 <SocialLink icon={Linkedin} label="LinkedIn" href={contactData.linkedin} color="hover:border-primary/40" />
+                                <SocialLink icon={MessageSquare} label="WhatsApp" href={contactData.whatsapp} color="hover:border-accent/40" />
                             </div>
                         </div>
                     </div>
