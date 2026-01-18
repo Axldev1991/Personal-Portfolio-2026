@@ -88,6 +88,7 @@ function ProjectItem({ project, language, onHover, onLeave, stageLabel }: { proj
         <motion.div
             onMouseEnter={onHover}
             onMouseLeave={onLeave}
+            onClick={() => window.open(project.link, "_blank")}
             className="group flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-border cursor-pointer hover:bg-surface/50 transition-colors px-0 md:px-4 gap-6"
         >
             <div className="flex flex-col gap-2 w-full md:w-auto md:flex-1 min-w-0">
