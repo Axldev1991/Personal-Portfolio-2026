@@ -90,33 +90,34 @@ function ProjectItem({ project, language, onHover, onLeave, stageLabel }: { proj
             onMouseLeave={onLeave}
             className="group flex flex-col md:flex-row items-start md:items-center justify-between py-12 border-b border-border cursor-pointer hover:bg-surface/50 transition-colors px-0 md:px-4 gap-6"
         >
-            <div className="flex flex-col gap-2 w-full">
-                <span className="text-muted font-mono text-[10px] md:text-xs tracking-widest uppercase">{stageLabel}</span>
-                <h3 className="text-[8vw] md:text-6xl font-bold md:group-hover:translate-x-6 transition-transform duration-500 uppercase tracking-tighter">
+            <div className="flex flex-col gap-2 w-full md:w-auto md:flex-1 min-w-0">
+                <span className="text-accent/60 font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase">{stageLabel}</span>
+                <h3 className="text-[10vw] md:text-5xl lg:text-6xl font-black md:group-hover:translate-x-6 transition-transform duration-500 uppercase tracking-tighter leading-[0.9]">
                     {project.title}
                 </h3>
-                <p className="text-muted text-sm max-w-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+                <p className="text-muted text-sm max-w-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 mt-2">
                     {description}
                 </p>
-                <div className="flex md:hidden gap-2 mt-2">
+                <div className="flex md:hidden gap-2 mt-4">
                     {project.tags.slice(0, 2).map(tag => (
-                        <span key={tag} className="text-[10px] px-2 py-0.5 bg-secondary rounded text-muted uppercase font-bold">
+                        <span key={tag} className="text-[10px] px-2 py-0.5 bg-white/5 border border-white/10 rounded-full text-accent font-bold uppercase">
                             {tag}
                         </span>
                     ))}
                 </div>
             </div>
 
-            <div className="flex items-center justify-between w-full md:w-auto gap-10">
-                <div className="hidden md:flex gap-4">
+            <div className="flex items-center justify-between w-full md:w-auto gap-12 shrink-0 self-end md:self-center">
+                <div className="hidden md:flex gap-3">
                     {project.tags.map(tag => (
-                        <span key={tag} className="text-xs px-2 py-1 bg-secondary rounded text-muted uppercase">
+                        <span key={tag} className="text-[10px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-muted group-hover:text-accent group-hover:border-accent/30 transition-colors uppercase font-bold tracking-wider">
                             {tag}
                         </span>
                     ))}
                 </div>
-                <div className="size-12 md:size-16 rounded-full border border-border flex items-center justify-center group-hover:bg-accent group-hover:text-black transition-all md:group-hover:rotate-45">
-                    <ArrowUpRight size={24} className="md:w-8 md:h-8" />
+                <div className="size-12 md:size-16 rounded-full border border-border flex items-center justify-center group-hover:bg-accent group-hover:text-black transition-all duration-500 md:group-hover:rotate-45 relative overflow-hidden">
+                    <ArrowUpRight size={24} className="md:w-8 md:h-8 relative z-10" />
+                    <div className="absolute inset-0 bg-accent scale-0 group-hover:scale-100 transition-transform duration-500 origin-center" />
                 </div>
             </div>
         </motion.div>
