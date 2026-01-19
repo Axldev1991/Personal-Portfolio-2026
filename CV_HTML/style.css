@@ -1,0 +1,271 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --primary-light: #eff6ff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --bg-main: #ffffff;
+    --bg-side: #f8fafc;
+    --accent: #38bdf8;
+    --border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f1f5f9;
+    color: var(--text-dark);
+    line-height: 1.5;
+    padding: 2rem 0;
+}
+
+.resume-container {
+    max-width: 210mm;
+    /* A4 Width */
+    min-height: 297mm;
+    /* A4 Height */
+    margin: 0 auto;
+    background: var(--bg-main);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 32% 68%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: var(--bg-side);
+    padding: 3rem 2rem;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-light);
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-section h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 0.3rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
+}
+
+.contact-item svg {
+    width: 16px;
+    color: var(--primary);
+}
+
+.skill-tag {
+    display: inline-block;
+    background: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    border: 1px solid var(--border);
+    margin: 0.2rem;
+    color: var(--text-dark);
+}
+
+/* Main Content Styling */
+.main-content {
+    padding: 3rem 3rem;
+    background: white;
+}
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.header .role {
+    font-size: 1.25rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.section {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.exp-item {
+    margin-bottom: 1.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--primary-light);
+}
+
+.exp-item::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3rem;
+}
+
+.exp-role {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.exp-company {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.exp-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.exp-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.exp-list {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+}
+
+.sidebar-item {
+    margin-bottom: 1.2rem;
+    padding-left: 0;
+}
+
+.sidebar-item .item-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.sidebar-item .item-subtitle {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.sidebar-item .item-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Download Button */
+.download-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--primary);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 100;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.download-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 20px -5px rgba(37, 99, 235, 0.5);
+}
+
+.download-btn svg {
+    width: 20px;
+}
+
+/* Print Optimization */
+@media print {
+    .download-btn {
+        display: none !important;
+    }
+
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    .resume-container {
+        box-shadow: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar {
+        -webkit-print-color-adjust: exact;
+        background-color: #f8fafc !important;
+    }
+}
