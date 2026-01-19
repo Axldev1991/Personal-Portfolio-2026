@@ -22,21 +22,34 @@ body {
     background-color: #f1f5f9;
     color: var(--text-dark);
     line-height: 1.5;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
+    /* Reduced padding for mobile */
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        padding: 2rem 0;
+    }
 }
 
 .resume-container {
+    width: 100%;
     max-width: 210mm;
-    /* A4 Width */
     min-height: 297mm;
-    /* A4 Height */
     margin: 0 auto;
     background: var(--bg-main);
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: 32% 68%;
+    display: block;
+    /* Default to block for mobile */
     position: relative;
     overflow: hidden;
+}
+
+@media screen and (min-width: 769px) {
+    .resume-container {
+        display: grid;
+        grid-template-columns: 32% 68%;
+    }
 }
 
 /* Sidebar Styling */
@@ -192,26 +205,38 @@ body {
     padding-left: 1.2rem;
 }
 
-.sidebar-item {
-    margin-bottom: 1.2rem;
-    padding-left: 0;
-}
-
-.sidebar-item .item-title {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--text-dark);
-}
-
-.sidebar-item .item-subtitle {
-    font-size: 0.8rem;
-    color: var(--primary);
-    font-weight: 500;
-}
-
 .sidebar-item .item-date {
     font-size: 0.75rem;
     color: var(--text-muted);
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 2rem 1.5rem;
+    }
+
+    .main-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+
+    .download-btn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* Download Button */
@@ -259,13 +284,26 @@ body {
     }
 
     .resume-container {
-        box-shadow: none;
-        width: 100%;
-        height: auto;
+        display: grid !important;
+        grid-template-columns: 32% 68% !important;
+        width: 210mm !important;
+        max-width: 210mm !important;
+        min-height: 297mm !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        overflow: visible !important;
     }
 
     .sidebar {
-        -webkit-print-color-adjust: exact;
+        display: flex !important;
+        flex-direction: column !important;
         background-color: #f8fafc !important;
+        -webkit-print-color-adjust: exact;
+        padding: 3rem 2rem !important;
+        border-right: 1px solid #e2e8f0 !important;
+    }
+
+    .main-content {
+        padding: 3rem 3rem !important;
     }
 }
