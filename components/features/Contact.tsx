@@ -53,6 +53,11 @@ export function Contact() {
                         </div>
                     </div>
                 </div>
+
+                <div className="mt-40 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 opacity-40">
+                    <p className="text-[10px] font-black uppercase tracking-[0.4em]">Axel Castellano // 2026</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted">AxlDev Portfolio Stage // 1.0</p>
+                </div>
             </div>
         </section>
     );

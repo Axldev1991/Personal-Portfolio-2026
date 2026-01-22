@@ -19,6 +19,17 @@ export function Navbar() {
 
     return (
         <>
+            {/* Mobile Header Brand */}
+            <div className="md:hidden fixed top-0 left-0 w-full p-6 z-[100] flex justify-between items-center pointer-events-none">
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40"
+                >
+                    Axel Castellano
+                </motion.div>
+            </div>
+
             {/* Desktop Sidebar */}
             <aside className="fixed left-0 top-0 h-screen w-20 border-r border-border bg-background/80 backdrop-blur-md z-[100] hidden md:flex flex-col items-center justify-between py-10">
                 <div className="flex flex-col items-center gap-12">
@@ -63,9 +74,14 @@ export function Navbar() {
                     </div>
 
                     <div className="w-px h-12 bg-border" />
-                    <p className="[writing-mode:vertical-lr] text-[10px] uppercase tracking-widest text-muted font-bold">
-                        V1.0_2026
-                    </p>
+                    <div className="flex flex-col items-center gap-4">
+                        <p className="[writing-mode:vertical-lr] rotate-180 text-[10px] uppercase tracking-widest text-primary font-black">
+                            AXEL CASTELLANO
+                        </p>
+                        <p className="[writing-mode:vertical-lr] text-[10px] uppercase tracking-widest text-muted font-bold">
+                            V1.0_2026
+                        </p>
+                    </div>
                 </div>
             </aside>
 
