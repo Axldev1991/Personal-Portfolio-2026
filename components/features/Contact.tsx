@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Github, Linkedin, ArrowRight } from "lucide-react";
+import { useContact } from "@/hooks/useContact";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ContactForm } from "./ContactForm";
 
 export function Contact() {
+    const { contactData } = useContact();
     const { t } = useLanguage();
 
     return (
@@ -41,9 +44,33 @@ export function Contact() {
 
                     <div className="flex flex-col justify-start gap-12">
                         <ContactForm />
+
+                        <div className="space-y-6 w-full">
+                            <div className="flex flex-wrap gap-4 w-full">
+                                <SocialLink icon={Github} label="GitHub" href={contactData.github} color="hover:border-white/40" />
+                                <SocialLink icon={Linkedin} label="LinkedIn" href={contactData.linkedin} color="hover:border-primary/40" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+    );
+}
+
+function SocialLink({ icon: Icon, label, href, color }: { icon: any, label: string, href: string, color: string }) {
+    return (
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex-1 min-w-[140px] glass-card p-6 rounded-2xl flex flex-col gap-4 group transition-all ${color}`}
+        >
+            <div className="flex justify-between items-start">
+                <Icon size={20} className="text-muted group-hover:text-foreground transition-colors" />
+                <ArrowRight size={16} className="text-muted opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+            </div>
+            <p className="font-black text-sm uppercase tracking-widest">{label}</p>
+        </a>
     );
 }

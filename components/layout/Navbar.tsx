@@ -2,11 +2,13 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Home, User, Briefcase, Mail, Globe, Terminal } from "lucide-react";
+import { Home, User, Briefcase, Mail, Github, Linkedin, Terminal, Globe } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
+import { useContact } from "@/hooks/useContact";
 
 export function Navbar() {
     const { t, language, setLanguage } = useLanguage();
+    const { contactData } = useContact();
 
     const navLinks = [
         { name: t("nav.main"), href: "#hero", icon: Home },
@@ -50,6 +52,15 @@ export function Navbar() {
                         <Globe size={20} />
                         <span className="text-[10px] font-black">{language.toUpperCase()}</span>
                     </button>
+
+                    <div className="flex flex-col gap-4">
+                        <a href={contactData.github} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors">
+                            <Github size={20} />
+                        </a>
+                        <a href={contactData.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors">
+                            <Linkedin size={20} />
+                        </a>
+                    </div>
 
                     <div className="w-px h-12 bg-border" />
                     <p className="[writing-mode:vertical-lr] text-[10px] uppercase tracking-widest text-muted font-bold">
