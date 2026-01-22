@@ -12,68 +12,107 @@ export function Hero() {
             {/* Background Gradient Blurs */}
             <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
 
-            <div className="relative z-10 w-full">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                    className="text-white/40 text-xs md:text-sm font-black uppercase tracking-[0.4em] mb-4"
-                >
-                    Axel Castellano // Portfolio
-                </motion.div>
+            <div className="relative z-10 w-full grid lg:grid-cols-[1fr_320px] gap-10 lg:gap-20 items-center">
+                <div className="space-y-12">
+                    <div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="text-white/40 text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-6"
+                        >
+                            Axel Castellano // Portfolio
+                        </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="inline-block px-3 py-1 bg-accent text-black text-[10px] font-black uppercase tracking-[0.3em] rounded mb-6 md:mb-8"
-                >
-                    {t("hero.role")}
-                </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="inline-block px-4 py-1.5 bg-accent text-black text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-2"
+                        >
+                            {t("hero.role")}
+                        </motion.div>
+                    </div>
 
-                <motion.h1
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-[11vw] md:text-[8vw] lg:text-[10vw] font-black leading-[0.8] uppercase flex flex-col gap-1 overflow-hidden"
-                >
-                    <span>{t("hero.title1")}</span>
-                    <span className="text-primary italic">{t("hero.title2")}</span>
-                    <span className="text-outline">{t("hero.title3")}</span>
-                </motion.h1>
-
-                <div className="flex flex-col md:flex-row gap-12 items-start md:items-end mt-12">
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.4 }}
-                        className="max-w-md text-lg md:text-xl text-muted leading-relaxed font-light border-l border-accent pl-8"
+                    <motion.h1
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-[11vw] md:text-[8vw] lg:text-[7vw] font-black leading-[0.85] uppercase flex flex-col gap-2 overflow-hidden"
                     >
-                        {t("hero.bio")}
-                    </motion.p>
+                        <span>{t("hero.title1")}</span>
+                        <span className="text-primary italic">{t("hero.title2")}</span>
+                        <span className="text-outline">{t("hero.title3")}</span>
+                    </motion.h1>
 
+                    {/* Mobile Avatar (Integrated better) */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.6 }}
-                        className="flex flex-col md:flex-row gap-4"
+                        className="lg:hidden relative w-40 aspect-square my-8"
                     >
-                        <a
-                            href="#contact"
-                            className="bg-primary hover:bg-white hover:text-primary transition-all duration-300 h-16 md:h-20 px-8 md:px-12 rounded-xl flex items-center gap-4 group cursor-pointer"
-                        >
-                            <span className="font-black uppercase tracking-widest text-sm md:text-base">{t("hero.cta")}</span>
-                            <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-                        </a>
-
-                        <a
-                            href="/CV_Axel_Castellano.html"
-                            target="_blank"
-                            className="border border-white/10 hover:border-accent hover:text-accent transition-all duration-300 h-16 md:h-20 px-8 md:px-12 rounded-xl flex items-center gap-4 group"
-                        >
-                            <span className="font-black uppercase tracking-widest text-sm md:text-base">{t("hero.cv")}</span>
-                        </a>
+                        <div className="absolute inset-0 bg-primary/30 blur-3xl rounded-full" />
+                        <div className="relative w-full h-full rounded-full border border-white/10 overflow-hidden shadow-2xl">
+                            <img
+                                src="/avatar_pixel_v9.png"
+                                alt="Axel"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
                     </motion.div>
+
+                    <div className="flex flex-col md:flex-row gap-12 items-start md:items-end mt-8">
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.4 }}
+                            className="max-w-md text-lg md:text-xl text-muted leading-relaxed font-light border-l-2 border-accent pl-8"
+                        >
+                            {t("hero.bio")}
+                        </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.6 }}
+                            className="flex flex-col md:flex-row gap-4 w-full md:w-auto"
+                        >
+                            <a
+                                href="#contact"
+                                className="bg-primary hover:bg-white hover:text-primary transition-all duration-300 h-16 md:h-20 px-10 rounded-2xl flex items-center justify-center gap-4 group cursor-pointer"
+                            >
+                                <span className="font-black uppercase tracking-widest text-sm md:text-base">{t("hero.cta")}</span>
+                                <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                            </a>
+
+                            <a
+                                href="/CV_Axel_Castellano.html"
+                                target="_blank"
+                                className="border border-white/10 hover:border-accent hover:text-accent transition-all duration-300 h-16 md:h-20 px-10 rounded-2xl flex items-center justify-center gap-4 group"
+                            >
+                                <span className="font-black uppercase tracking-widest text-sm md:text-base">{t("hero.cv")}</span>
+                            </a>
+                        </motion.div>
+                    </div>
                 </div>
+
+                {/* Desktop Avatar (Clean, no frame) */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring", stiffness: 50 }}
+                    className="hidden lg:block relative"
+                >
+                    <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full" />
+                    <div className="relative aspect-square rounded-full overflow-hidden border border-white/5 group shadow-[0_0_50px_rgba(51,13,242,0.1)]">
+                        <img
+                            src="/avatar_pixel_v9.png"
+                            alt="Axel Castellano"
+                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                        />
+                    </div>
+                    {/* Decorative Ring */}
+                    <div className="absolute -inset-4 border border-white/5 rounded-full pointer-events-none" />
+                </motion.div>
             </div>
 
             {/* Marquee Stack */}
