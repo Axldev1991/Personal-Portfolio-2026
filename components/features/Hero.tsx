@@ -13,14 +13,15 @@ export function Hero() {
             <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="relative z-10 w-full grid lg:grid-cols-[1fr_320px] gap-8 lg:gap-20 items-center">
-                <div className="space-y-6 md:space-y-12">
-                    <div className="flex justify-between items-start gap-4">
-                        <div className="space-y-2">
+                <div className="space-y-8 md:space-y-12">
+                    {/* Header Info & Mobile Avatar */}
+                    <div className="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-4">
+                        <div className="space-y-3">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
-                                className="text-white/40 text-[9px] md:text-xs font-black uppercase tracking-[0.3em] md:tracking-[0.4em]"
+                                className="text-white/40 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] md:tracking-[0.4em]"
                             >
                                 Axel Castellano // Portfolio
                             </motion.div>
@@ -28,17 +29,17 @@ export function Hero() {
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-accent text-black text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] rounded-full"
+                                className="inline-block px-3 py-1.5 bg-accent text-black text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] rounded-full"
                             >
                                 {t("hero.role")}
                             </motion.div>
                         </div>
 
-                        {/* Mobile Avatar (Compact and integrated) */}
+                        {/* Mobile Avatar - Positioned carefully to avoid clipping */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="lg:hidden relative size-20"
+                            className="lg:hidden relative size-24 md:size-32 self-start sm:self-auto"
                         >
                             <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full" />
                             <div className="relative w-full h-full rounded-full border border-white/10 overflow-hidden shadow-xl">
@@ -55,14 +56,14 @@ export function Hero() {
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-black leading-[0.85] uppercase flex flex-col gap-1 md:gap-2 overflow-hidden"
+                        className="text-[10vw] sm:text-[9vw] md:text-[8vw] lg:text-[7vw] font-black leading-[0.9] sm:leading-[0.85] uppercase flex flex-col gap-1 md:gap-2 overflow-hidden"
                     >
-                        <span>{t("hero.title1")}</span>
-                        <span className="text-primary italic">{t("hero.title2")}</span>
-                        <span className="text-outline">{t("hero.title3")}</span>
+                        <span className="truncate">{t("hero.title1")}</span>
+                        <span className="text-primary italic truncate">{t("hero.title2")}</span>
+                        <span className="text-outline truncate">{t("hero.title3")}</span>
                     </motion.h1>
 
-                    <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-end md:mt-8">
+                    <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-end md:mt-8">
                         <motion.p
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -76,7 +77,7 @@ export function Hero() {
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.6 }}
-                            className="flex flex-col md:flex-row gap-4 w-full md:w-auto"
+                            className="flex flex-col md:flex-row gap-4 w-full md:w-auto mt-4 md:mt-0"
                         >
                             <a
                                 href="#contact"
@@ -97,7 +98,7 @@ export function Hero() {
                     </div>
                 </div>
 
-                {/* Desktop Avatar (Clean, no frame) */}
+                {/* Desktop Avatar */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -112,13 +113,11 @@ export function Hero() {
                             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                         />
                     </div>
-                    {/* Decorative Ring */}
-                    <div className="absolute -inset-4 border border-white/5 rounded-full pointer-events-none" />
                 </motion.div>
             </div>
 
             {/* Marquee Stack */}
-            <div className="absolute bottom-10 left-0 w-full overflow-hidden py-10 border-y border-white/5 opacity-20">
+            <div className="absolute bottom-10 left-0 w-full overflow-hidden py-10 border-y border-white/5 opacity-20 hidden md:block">
                 <div className="flex whitespace-nowrap animate-marquee gap-10 text-4xl md:text-6xl font-black uppercase">
                     <span>Next.js_</span>
                     <span className="text-primary">WordPress_</span>
@@ -126,7 +125,6 @@ export function Hero() {
                     <span className="text-accent">Elementor_</span>
                     <span>Tailwind_</span>
                     <span className="text-primary">React_</span>
-                    <span>Custom Kits_</span>
                 </div>
             </div>
         </section>
